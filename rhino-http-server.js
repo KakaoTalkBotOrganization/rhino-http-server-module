@@ -4,7 +4,7 @@ const ServerSocket = java.net.ServerSocket;
 const InputStreamReader = java.io.InputStreamReader;
 const BufferedReader = java.io.BufferedReader;
 exports.HttpServer = function() {
-    function HttpServer() {
+	function HttpServer() {
 		this.server = {}
 		this.server.listener = null;
 		this.server.body = "";
@@ -13,7 +13,7 @@ exports.HttpServer = function() {
 		this.server.head["Keep-Alive"] = "timeout=5, max=100";
 		this.server.head["Connection"] = "Keep-Alive";
 		this.server.head["Content-Type"] = "text/html; charset=utf8";
-    }
+	}
 	HttpServer.prototype.init = function(port) {
 		this.server.listener = ServerSocket(port);
 		this.server.port = port; //사실은, 이거 장식임.
