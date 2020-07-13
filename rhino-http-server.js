@@ -41,7 +41,7 @@ exports.HttpServer = function() {
 				delete s;
 				client[key] = value;
 			}
-			listener(this, client);//client["Host"]이런식으로 접근
+			listener(this.server, client);//client["Host"]이런식으로 접근
 			let response = "HTTP/1.1 " + this.server.status + "\r\n";
 			response += "Content-Length: " + this.server.body.length + "\r\n";
 			Object.keys(this.server.head).forEach(key => {
